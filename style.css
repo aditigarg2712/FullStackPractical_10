@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    width: 100%;
+    height: 70px;
+    background-color: #483C32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img{
+    width: 70px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.header h1{
+    line-height: 70px;
+    color: azure;
+}
+
+.content{
+    width:100%;
+    margin-top: 70px;
+    padding: 20px;
+    float: right;
+    transition: 0.7s;
+}
+
+.content img{
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: auto;
+}
+
+.content p{
+    text-align: justify;
+}
+
+.sidebar{
+    width:20%;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    background-color: #06343f;
+    left: -100%;
+    transition: 0.7s;
+}
+
+.sidebar ul{
+    list-style: none;
+}
+
+.sidebar ul li{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 15px 25px;
+    transition: 0.4s;
+}
+
+a i{
+    margin: 15px;
+    border-right: 15px;
+}
+
+.sidebar ul li a:hover{
+    border-left: 10px solid white;
+}
+
+.social{
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+}
+
+i{
+    font-size: 30px;
+    color: white;
+    padding-right: 15px;
+}
+
+.show-button, .hide-button{
+    font-size: 35px;
+    color: white;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+}
+
+.hide-button{
+    opacity: 0;
+}
+
+#chk:checked ~ .sidebar{
+    left: 0;
+}
+
+#chk:checked ~ .show-button{
+    opacity: 0;
+}
+
+#chk:checked ~ .hide-button{
+    opacity: 1;
+}
+
+#chk:checked ~ .content{
+    width: 80%;
+}
+
+@meadia(max-width: 768px){
+    .sidebar{
+        width: 100%;
+        text-align: center;
+    }
+
+    .header h1{
+        display: none;
+    }
+}
